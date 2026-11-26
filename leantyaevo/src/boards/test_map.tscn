@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://t7sf6qnus65" path="res://assets/boards/tiles/tileset_leantyeavo_1.png" id="1_moj46"]
 [ext_resource type="PackedScene" uid="uid://c6bf5oxcf53kx" path="res://src/entity-scenes/player.tscn" id="2_cm6kp"]
 [ext_resource type="Script" uid="uid://l1joi5wetmxg" path="res://src/entity-scenes/player.gd" id="3_3ajne"]
+[ext_resource type="PackedScene" uid="uid://comb4e5dolym0" path="res://src/main-game/hud.tscn" id="4_vixox"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm6kp"]
 texture = ExtResource("1_moj46")
@@ -48,5 +49,4 @@ tile_set = SubResource("TileSet_g4v7s")
 position = Vector2(1372, 796)
 script = ExtResource("3_3ajne")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1362979072]
-position = Vector2(1018, 573)
+[node name="HUD" parent="." unique_id=1565656797 instance=ExtResource("4_vixox")]

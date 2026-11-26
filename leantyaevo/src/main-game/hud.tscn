@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://comb4e5dolym0"]
+
+[ext_resource type="Script" uid="uid://dj6jciea06s0d" path="res://src/main-game/hud.gd" id="1_8uvd2"]
+[ext_resource type="Texture2D" uid="uid://cc51s4xgvtwe5" path="res://assets/icons/dice-128.png" id="1_yx6n4"]
+[ext_resource type="FontFile" uid="uid://bs3c5vvebsaif" path="res://assets/fonts/ARCADECLASSIC.TTF" id="2_k8etg"]
+[ext_resource type="FontFile" uid="uid://0515yg4h8y50" path="res://assets/fonts/NineteenNinetyThree-L1Ay.ttf" id="4_4i8hx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("2_k8etg")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_cv26b"]
+font = ExtResource("4_4i8hx")
+font_size = 48
+
+[node name="HUD" type="CanvasLayer" unique_id=1565656797]
+script = ExtResource("1_8uvd2")
+
+[node name="RollResult" type="Label" parent="." unique_id=789132064]
+offset_left = 1632.0
+offset_top = 696.0
+offset_right = 1843.0
+offset_bottom = 763.0
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+
+[node name="RollDieButton" type="Button" parent="." unique_id=573516646]
+offset_left = 1672.0
+offset_top = 840.0
+offset_right = 1808.0
+offset_bottom = 976.0
+icon = ExtResource("1_yx6n4")
+flat = true
+
+[node name="PlayerStats" type="Label" parent="." unique_id=587206628]
+offset_left = 60.0
+offset_top = 880.0
+offset_right = 690.0
+offset_bottom = 1031.0
+text = "Пройдено кругов: -
+Заработанные баллы: -"
+label_settings = SubResource("LabelSettings_cv26b")
+
+[node name="HintButton" type="TextureRect" parent="." unique_id=940070048]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="RollDieButton" to="." method="_on_roll_die_button_pressed"]
