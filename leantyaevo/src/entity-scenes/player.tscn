@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c6bf5oxcf53kx"]
+
+[ext_resource type="Texture2D" uid="uid://cr30oyvkeqxuu" path="res://assets/player/Персонаж_с.png" id="1_l5bmh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l5bmh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abpfp"]
+radius = 11.0
+height = 34.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1688744547]
+metadata/_edit_group_ = true
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=2132698810]
+position = Vector2(9.15625, 16.718748)
+scale = Vector2(0.13453391, 0.122779205)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=984982165]
+position = Vector2(8, 14)
+shape = SubResource("CapsuleShape2D_abpfp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1404060135]
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
