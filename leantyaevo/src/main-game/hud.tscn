@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cc51s4xgvtwe5" path="res://assets/icons/dice-128.png" id="1_yx6n4"]
 [ext_resource type="FontFile" uid="uid://bs3c5vvebsaif" path="res://assets/fonts/ARCADECLASSIC.TTF" id="2_k8etg"]
 [ext_resource type="FontFile" uid="uid://0515yg4h8y50" path="res://assets/fonts/NineteenNinetyThree-L1Ay.ttf" id="4_4i8hx"]
+[ext_resource type="Texture2D" uid="uid://dbg6gvxou1wku" path="res://assets/icons/light-bulb-off.png" id="5_utjqr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
 font = ExtResource("2_k8etg")
@@ -41,8 +42,31 @@ text = "Пройдено кругов: -
 Заработанные баллы: -"
 label_settings = SubResource("LabelSettings_cv26b")
 
-[node name="HintButton" type="TextureRect" parent="." unique_id=940070048]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="HintButton" type="Button" parent="." unique_id=1037051701]
+offset_top = 1.0
+offset_right = 178.0
+offset_bottom = 181.0
+icon = ExtResource("5_utjqr")
+flat = true
+expand_icon = true
+
+[node name="HintPopUp" type="Window" parent="." unique_id=1221456176]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 500)
+visible = false
+
+[node name="HintContent" type="RichTextLabel" parent="HintPopUp" unique_id=1544970432]
+offset_left = 40.0
+offset_top = 75.0
+offset_right = 471.0
+offset_bottom = 423.0
+theme_override_fonts/normal_font = ExtResource("4_4i8hx")
+theme_override_font_sizes/normal_font_size = 64
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="RollDieButton" to="." method="_on_roll_die_button_pressed"]
+[connection signal="pressed" from="HintButton" to="." method="_on_hint_button_pressed"]
+[connection signal="close_requested" from="HintPopUp" to="." method="_on_hint_pop_up_close_requested"]
